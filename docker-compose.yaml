@@ -13,3 +13,15 @@ services:
       - 3000:3000
     restart: on-failure
 
+  data-base:
+    image: mysql:8.0
+    container_name: jordan_data_base
+    volumes:
+      - ./data-base:/var/lib/mysql
+    ports:
+      - 33060:3306
+    restart: on-failure
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+
+
